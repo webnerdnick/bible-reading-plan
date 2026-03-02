@@ -28,7 +28,7 @@ export default function Home() {
             </h1>
             <p className="text-gray-600 max-w-xl mx-auto">
               Create a personalized Bible reading plan. Customize your start
-              date, pace, and reading tracks, then print or save as PDF.
+              date, pace, and reading tracks, then print or save as PDF. This was created by <a href='https://www.hopebaptistclearfield.org/' target='_blank' rel='noopener noreferrer'>Hope Baptist Church of Clearfield, Pennsylvania</a>.
             </p>
           </div>
         </div>

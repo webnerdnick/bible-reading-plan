@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bible Reading Plan Generator",
   description:
-    "Create a personalized, printable Bible reading plan based on the Navigators reading plan structure.",
+    "Create a personalized, printable Bible reading plan.",
 };
 
 export default function RootLayout({
