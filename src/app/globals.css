@@ -12,15 +12,72 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  /* Hide non-print elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    size: letter landscape;
+    margin: 0.4in 0.3in;
+  }
+
+  /* Force background colors to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 7.5pt !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Page breaks — keep each month card intact, no forced break after */
+  .month-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Print header on first page */
+  .reading-plan-grid > div:first-child {
+    grid-column: 1 / -1;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Compact table styling for 2-up layout */
+  .reading-table {
+    font-size: 7pt;
+    line-height: 1.1;
+  }
+
+  .reading-table th {
+    font-size: 6pt;
+    padding: 1px 2px !important;
+  }
+
+  .reading-table td {
+    padding: 0.75px 2px !important;
+  }
+
+  /* Checkbox for print */
+  .reading-checkbox {
+    width: 8px !important;
+    height: 8px !important;
+    border: 1px solid #555 !important;
+    border-radius: 1px !important;
+  }
 }
